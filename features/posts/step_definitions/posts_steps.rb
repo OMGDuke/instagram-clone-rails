@@ -29,7 +29,7 @@ end
 And(/^I click Create Post$/) do
   click_button 'Create Post'
 end
-Then(/^I should see the post name$/) do
+Then(/^I should see the post title$/) do
   expect(page).to have_content 'Cloudy Day'
   expect(page).not_to have_content 'No Posts Yet'
 end
@@ -50,4 +50,21 @@ Then(/^I should see the post content$/) do
 end
 And(/^I should be on the posts route$/) do
   expect(current_path).to eq "/posts/#{@post.id}"
+end
+
+#Edit Post
+And(/^I click the edit link$/) do
+  click_link 'Edit Sunny Day'
+end
+And(/^I fill in the new post details$/) do
+  fill_in 'Title', with: 'Rainy Day'
+  fill_in 'Description', with: 'It\'s wet!'
+end
+And(/^I click Update Post$/) do
+  click_button 'Update Post'
+end
+Then(/^I should see the new post details$/) do
+  expect(page).to have_content 'Rainy Day'
+  expect(page).to have_content 'It\'s wet!'
+  expect(page).not_to have_content 'Sunny Day'
 end

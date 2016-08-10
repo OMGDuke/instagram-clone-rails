@@ -28,6 +28,11 @@ As a User
 I want to be able to view posts
 So that I get all the detail
 
+Feature: Update Post
+As a User
+I want to be able to edit my post
+So that I can make changes.
+
 Background:
 When I go to the homepage
 
@@ -44,7 +49,7 @@ Scenario: Adding a post
 And I click the New Post link
 And I fill in the post details
 And I click Create Post
-Then I should see the post name
+Then I should see the post title
 
 @post_added
 Scenario: Post has been added
@@ -55,3 +60,11 @@ Scenario: View Post
 And I click the post
 Then I should see the post content
 And I should be on the posts route
+
+@post_added
+Scenario: Edit Post
+And I click the post
+And I click the edit link
+And I fill in the new post details
+And I click Update Post
+Then I should see the new post details
