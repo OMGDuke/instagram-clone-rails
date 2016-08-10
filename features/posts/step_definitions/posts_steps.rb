@@ -77,3 +77,13 @@ Then(/^I should no longer see the post$/) do
   expect(page).not_to have_content 'Sunny Day'
   expect(page).to have_content 'Post successfully deleted'
 end
+
+#Invalid Post
+And(/^I fill in details incorrectly$/) do
+  fill_in 'Title', with: 'Cl'
+  fill_in 'Description', with: 'It\'s a bit cloudy'
+end
+Then(/^I should see an error instead of the post$/) do
+  expect(page).not_to have_css 'h2', text: 'Cl'
+  expect(page).to have_content 'error'
+end

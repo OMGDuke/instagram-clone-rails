@@ -37,6 +37,7 @@ group :development, :test do
   # database_cleaner is not required, but highly recommended
   gem 'database_cleaner'
   gem 'rspec-rails'
+  gem 'rspec-collection_matchers'
 end
 
 group :development do

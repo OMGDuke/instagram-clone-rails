@@ -8,7 +8,7 @@
 
 <% if @comments.any? %>
   <% @comments.each do |comment| %>
-    <%= comment.thoughts %>
+    <h3><%= comment.thoughts %></h3>
   <% end %>
 <% else %>
   <h3>No Comments yet</h3>

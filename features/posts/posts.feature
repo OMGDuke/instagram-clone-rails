@@ -38,6 +38,11 @@ As a User
 I want to be able to delete my post
 So that I can get rid of my post if I don't like it.
 
+Feature: Invalid Post
+As a User
+I want to know if my titles are invalid
+So I know why my post didn't work
+
 Background:
 When I go to the homepage
 
@@ -79,3 +84,9 @@ Scenario: Delete Post
 And I click the post
 And I click the delete link
 Then I should no longer see the post
+
+Scenario: Invalid Post
+And I click the New Post link
+And I fill in details incorrectly
+And I click Create Post
+Then I should see an error instead of the post
