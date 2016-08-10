@@ -6,6 +6,10 @@ Then(/^I should see the app name$/) do
   expect(page).to have_content("Photogram")
 end
 
-Then(/^I should see a new post button$/) do
+Then(/^I should see the message no posts yet$/) do
+  expect(page).to have_content("No Posts yet")
+end
+
+Then(/^I should see a new post link$/) do
   expect(page).to have_link 'New Post'
 end
