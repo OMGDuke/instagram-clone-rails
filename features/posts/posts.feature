@@ -23,6 +23,10 @@ As a User
 I want to see the see created posts
 So that I know they are being stored
 
+Feature: View Post
+As a User
+I want to be able to view posts
+So that I get all the detail
 
 Background:
 When I go to the homepage
@@ -45,3 +49,9 @@ Then I should see the post name
 @post_added
 Scenario: Post has been added
 Then I should see the post
+
+@post_added
+Scenario: View Post
+And I click the post
+Then I should see the post content
+And I should be on the posts route

@@ -1,3 +1,3 @@
 Before('@post_added') do
-  Post.create(title: 'Sunny Day')
+  @post = Post.create(title: 'Sunny Day', description: 'It is Sunny')
 end

@@ -39,3 +39,15 @@ Then(/^I should see the post$/) do
   expect(page).to have_content('Sunny Day')
   expect(page).not_to have_content('No Posts yet')
 end
+
+#View Post
+And(/^I click the post$/) do
+  click_link 'Sunny Day'
+end
+Then(/^I should see the post content$/) do
+  expect(page).to have_content 'Sunny Day'
+  expect(page).to have_content 'It is Sunny'
+end
+And(/^I should be on the posts route$/) do
+  expect(current_path).to eq "/posts/#{@post.id}"
+end

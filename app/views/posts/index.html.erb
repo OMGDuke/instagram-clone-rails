@@ -1,6 +1,6 @@
 <% if @posts.any? %>
   <% @posts.each do |post| %>
-    <h3><%= post.title %></h3>
+    <%= link_to post.title, post_path(post) %>
   <% end %>
 <% else %>
   <h3>No Posts yet</h3>
