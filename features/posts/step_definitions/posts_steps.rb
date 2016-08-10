@@ -13,3 +13,8 @@ end
 Then(/^I should see a new post link$/) do
   expect(page).to have_link 'New Post'
 end
+
+Then(/^I should see the post$/) do
+  expect(page).to have_content('Sunny Day')
+    expect(page).not_to have_content('No Posts yet')
+end

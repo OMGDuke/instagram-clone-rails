@@ -13,6 +13,11 @@ As a User
 I want to see an New Post button
 So that I can create a new post
 
+Feature: Post added
+As a User
+I want to see the see created posts
+So that I know they are being stored
+
 Background:
 When I go to the homepage
 
@@ -24,3 +29,7 @@ Then I should see the message no posts yet
 
 Scenario: User sees a new post link
 Then I should see a new post link
+
+@post_added
+Scenario: Post has been added
+Then I should see the post
