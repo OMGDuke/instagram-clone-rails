@@ -12,5 +12,7 @@ This is a clone of instagram built with Rails v5 and tested with Cucumber
 
 ### Tests
 * Ensure server is running
+* Run `rake db:create RAILS_ENV=test`
+* Run `rake db:migrate RAILS_ENV=test`
 * Run `rake cucumber` for feature tests
 * Run `rspec` for unit tests

@@ -1,3 +1,9 @@
-No Posts yet
+<% if Post.all.any? %>
+  <% Post.all.each do |post| %>
+    <h3><%= post.title %></h3>
+  <% end %>
+<% else %>
+  <h3>No Posts yet</h3>
+<% end %>
 
 <a href="#">New Post</a>
