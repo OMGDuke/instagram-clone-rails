@@ -12,12 +12,9 @@ class PostsController < ApplicationController
     redirect_to root_path
   end
 
-  def post_params
-    params.require(:post).permit(:title, :description)
-  end
-
   def show
     @post = Post.find(params[:id])
+    @comments = @post.comments
   end
 
   def edit
@@ -35,5 +32,11 @@ class PostsController < ApplicationController
     @post.destroy
     flash[:notice] = 'Post successfully deleted'
     redirect_to root_path
+  end
+
+  private
+
+  def post_params
+    params.require(:post).permit(:title, :description)
   end
 end
