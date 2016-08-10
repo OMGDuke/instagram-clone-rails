@@ -33,6 +33,11 @@ As a User
 I want to be able to edit my post
 So that I can make changes.
 
+Feature: Delete Post
+As a User
+I want to be able to delete my post
+So that I can get rid of my post if I don't like it.
+
 Background:
 When I go to the homepage
 
@@ -68,3 +73,9 @@ And I click the edit link
 And I fill in the new post details
 And I click Update Post
 Then I should see the new post details
+
+@post_added
+Scenario: Delete Post
+And I click the post
+And I click the delete link
+Then I should no longer see the post

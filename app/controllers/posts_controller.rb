@@ -29,4 +29,11 @@ class PostsController < ApplicationController
     @post.update(post_params)
     redirect_to post_path(@post)
   end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    flash[:notice] = 'Post successfully deleted'
+    redirect_to root_path
+  end
 end

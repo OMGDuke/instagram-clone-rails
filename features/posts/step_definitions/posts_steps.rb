@@ -68,3 +68,12 @@ Then(/^I should see the new post details$/) do
   expect(page).to have_content 'It\'s wet!'
   expect(page).not_to have_content 'Sunny Day'
 end
+
+#Delete Post
+And(/^I click the delete link$/) do
+  click_link 'Delete Sunny Day'
+end
+Then(/^I should no longer see the post$/) do
+  expect(page).not_to have_content 'Sunny Day'
+  expect(page).to have_content 'Post successfully deleted'
+end
