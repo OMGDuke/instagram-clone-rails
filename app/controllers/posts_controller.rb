@@ -1,7 +1,4 @@
 class PostsController < ApplicationController
-
-  before_action :authenticate_user!, :except => [:index, :show]
-
   def index
     @posts = Post.all
   end
@@ -26,10 +23,6 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
-    if !@post.belongs_to_user?(current_user)
-      flash[:notice] = 'Can only edit your own posts'
-      redirect_to posts_path
-    end
   end
 
   def update
@@ -38,22 +31,16 @@ class PostsController < ApplicationController
     redirect_to post_path(@post)
   end
 
-
   def destroy
     @post = Post.find(params[:id])
-    if @post.belongs_to_user?(current_user)
-      @post.destroy
-      flash[:notice] = 'Post deleted successfully'
-    else
-      flash[:notice] = 'Can only delete your own posts'
-    end
-    redirect_to posts_path
+    @post.destroy
+    flash[:notice] = 'Post successfully deleted'
+    redirect_to root_path
   end
 
   private
 
   def post_params
-    params.require(:post).permit(:title, :description).merge(user: current_user)
-
+    params.require(:post).permit(:title, :description)
   end
 end

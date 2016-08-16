@@ -5,12 +5,6 @@ This is a clone of instagram built with Rails v5 and tested with Cucumber
 ### Installation
 
 * Run `bundle install`
-* Create a `.env` file and add the following vars to it  
-```
-SECRET_KEY_BASE=your_sercret_key
-FACEBOOK_APP_ID=your_facebook_app_id
-FACEBOOK_APP_SECRET=your_facebook_app_secret
-```
 * Run `rails db:create`
 * Run `rails db:migrate`
 * Run `rails s`

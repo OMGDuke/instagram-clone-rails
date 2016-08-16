@@ -55,7 +55,6 @@ Then I should see the message no posts yet
 Scenario: User sees a new post link
 Then I should see a new post link
 
-@sign_up
 Scenario: Adding a post
 And I click the New Post link
 And I fill in the post details
@@ -72,7 +71,6 @@ And I click the post
 Then I should see the post content
 And I should be on the posts route
 
-@sign_up
 @post_added
 Scenario: Edit Post
 And I click the post
@@ -81,14 +79,12 @@ And I fill in the new post details
 And I click Update Post
 Then I should see the new post details
 
-@sign_up
 @post_added
 Scenario: Delete Post
 And I click the post
 And I click the delete link
 Then I should no longer see the post
 
-@sign_up
 Scenario: Invalid Post
 And I click the New Post link
 And I fill in details incorrectly
