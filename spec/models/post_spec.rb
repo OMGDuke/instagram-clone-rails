@@ -8,8 +8,8 @@ RSpec.describe Post, type: :model do
   end
 
   it "is not valid unless it has a unique title" do
-  Post.create(title: "Sunny Day")
-  post = Post.new(title: "Sunny Day")
-  expect(post).to have(1).error_on(:title)
-end
+    Post.create(title: "Sunny Day")
+    post = Post.new(title: "Sunny Day")
+    expect(post).to have(1).error_on(:title)
+  end
 end
